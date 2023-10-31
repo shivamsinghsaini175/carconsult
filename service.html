@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" class="service-page">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - CarConsult</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a> 
+                <a href="contact.html">Contact</a> 
+            </div>
+        </nav>
+        
+    </header>
+
+    <section class="services">
+        <div class="container">
+            
+<div class="service">
+    <h1>Consultation Sessions</h1>
+    <p><h3> one-on-one consultation sessions connect you with industry experts who provide tailored advice to address your challenges and opportunities.</h3></p>
+    
+   
+</div>
+           
+<div class="modal" id="booking-modal">
+    <div class="modal-content">
+        
+        <h2>Book Your Consultation</h2>
+        <form action="booking_process.php" method="post">
+               
+            </select>
+
+            <label for="datetime">Select Date and Time:</label>
+            <input type="datetime-local" id="datetime" name="datetime" required>
+
+            <button type="button" class="book-button" onclick="confirmBooking()">Confirm Booking</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    function openModal(service) {
+        var modal = document.getElementById('booking-modal');
+        var serviceSelect = document.getElementById('service');
+
+      
+        serviceSelect.value = service;
+
+        modal.style.display = 'block';
+    }
+
+    function closeModal() {
+        var modal = document.getElementById('booking-modal');
+        modal.style.display = 'none';
+    }
+
+    function confirmBooking() {
+        closeModal();
+        alert("Your booking is confirmed, and one of our agents will contact you soon. Thank you!");
+    }
+
+   
+    var bookButtons = document.querySelectorAll('.book-button');
+    bookButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            var service = button.getAttribute('data-service');
+            openModal(service);
+        });
+    });
+</script>
+
+
+            <h2>Our Services</h2>
+            <p>Discover the range of services we offer to meet your business needs.</p>
+
+            <div class="service">
+                <h3>Consultation Sessions</h3>
+                <p>Our one-on-one consultation sessions connect you with industry experts who provide tailored advice to address your challenges and opportunities.</p>
+            </div>
+
+            <div class="service">
+                <h3>Customized Solutions</h3>
+                <p>We understand that every business is unique. Our team specializes in crafting personalized solutions to ensure your success in a competitive market.</p>
+            </div>
+
+            <div class="service">
+                <h3>24/7 Support</h3>
+                <p>Your questions and concerns don't have a schedule, and neither do we. Our 24/7 support team is ready to assist you whenever you need it.</p>
+            </div>
+           
+            
+</div>
+
+
+
+        </div>
+        
+    </section>
+
+    
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 CarConsult. All rights reserved.</p>
+        </div>
+        
+    </footer>
+</body>
+</html>
